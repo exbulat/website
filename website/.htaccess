@@ -1,0 +1,20 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    
+    # Redirect Trailing Slashes...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+    
+    # Разрешить доступ к файлам из public/storage
+    RewriteRule ^storage/(.*)$ /storage/$1 [L]
+    
+    # Разрешить доступ к изображениям
+    RewriteCond %{REQUEST_URI} \.(jpg|jpeg|png|gif)$ [NC]
+    RewriteRule ^ - [L]
+</IfModule>

@@ -1,0 +1,243 @@
+/* Анимации для сайта опросов */
+
+/* Анимация загрузки страницы */
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+body.page-loaded {
+    opacity: 1;
+}
+
+/* Анимация перехода между страницами */
+.page-transition-out {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Анимация появления элементов при прокрутке */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.animate-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Анимация для карточек */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-animated {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: cardAppear 0.5s forwards;
+}
+
+@keyframes cardAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация для кнопок */
+.btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-pressed {
+    transform: scale(0.95);
+}
+
+.btn-pulse {
+    animation: btnPulse 2s infinite;
+}
+
+@keyframes btnPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(78, 115, 223, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(78, 115, 223, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(78, 115, 223, 0);
+    }
+}
+
+/* Анимация для графиков и диаграмм */
+.chart-animated {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: chartAppear 0.8s forwards;
+}
+
+@keyframes chartAppear {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Анимация для таблиц */
+.table-row-animated {
+    opacity: 0;
+    animation: tableRowAppear 0.5s forwards;
+}
+
+@keyframes tableRowAppear {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Анимация для алертов и уведомлений */
+.alert {
+    animation: alertAppear 0.3s forwards;
+}
+
+@keyframes alertAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация для модальных окон */
+.modal.fade .modal-dialog {
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal.show .modal-dialog {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Анимация для навигации */
+.nav-item {
+    position: relative;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #4e73df;
+    transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+/* Анимация для прогресс-баров */
+.progress-bar {
+    transition: width 1s ease-in-out;
+}
+
+/* Анимация для форм */
+.form-control:focus {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Анимация для списков */
+.list-group-item {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.list-group-item:hover {
+    transform: translateX(5px);
+}
+
+/* Анимация для иконок */
+.animated-icon {
+    transition: transform 0.3s ease;
+}
+
+.animated-icon:hover {
+    transform: rotate(15deg);
+}
+
+/* Анимация для бейджей */
+.badge {
+    transition: transform 0.3s ease;
+}
+
+.badge:hover {
+    transform: scale(1.1);
+}
+
+/* Анимация для дропдаунов */
+.dropdown-menu {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: block;
+    pointer-events: none;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Анимация для результатов опросов */
+.result-bar {
+    width: 0;
+    transition: width 1.5s ease-in-out;
+}
+
+/* Анимация для статистических карточек */
+.stats-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) rotate(30deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(30deg);
+    }
+}

@@ -1,0 +1,793 @@
+/* Стили для версии сайта для слабовидящих */
+
+/* Высококонтрастный режим */
+body.accessibility-mode {
+    color: #000000 !important;
+    background-color: #FFFFFF !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    letter-spacing: 0.05em !important;
+    word-spacing: 0.1em !important;
+}
+
+/* Базовые элементы */
+body.accessibility-mode * {
+    background-image: none !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    transition: none !important;
+    animation: none !important;
+}
+
+/* Контейнеры и карточки */
+body.accessibility-mode .container,
+body.accessibility-mode .card,
+body.accessibility-mode .card-body,
+body.accessibility-mode .card-header,
+body.accessibility-mode .list-group-item {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* Стили для карточек опросов */
+body.accessibility-mode .dropdown-item.text-primary,
+body.accessibility-mode .dropdown-item.text-danger {
+    display: block !important;
+    padding: 8px 15px !important;
+    margin: 5px 0 !important;
+    font-weight: bold !important;
+    border: 2px solid !important;
+    text-align: left !important;
+    width: 100% !important;
+}
+
+body.accessibility-mode .dropdown-item.text-primary {
+    color: #0000FF !important;
+    background-color: #FFFFFF !important;
+    border-color: #0000FF !important;
+}
+
+body.accessibility-mode .dropdown-item.text-danger {
+    color: #FF0000 !important;
+    background-color: #FFFFFF !important;
+    border-color: #FF0000 !important;
+}
+
+body.accessibility-mode .dropdown-item.text-primary:hover,
+body.accessibility-mode .dropdown-item.text-primary:focus {
+    color: #FFFFFF !important;
+    background-color: #0000FF !important;
+}
+
+body.accessibility-mode .dropdown-item.text-danger:hover,
+body.accessibility-mode .dropdown-item.text-danger:focus {
+    color: #FFFFFF !important;
+    background-color: #FF0000 !important;
+}
+
+body.accessibility-mode .card-animated {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
+body.accessibility-mode .badge {
+    font-size: 16px !important;
+    padding: 5px 10px !important;
+    border: 2px solid #000000 !important;
+    margin: 5px !important;
+}
+
+body.accessibility-mode .badge.bg-success {
+    background-color: #008000 !important;
+    color: #FFFFFF !important;
+}
+
+body.accessibility-mode .badge.bg-secondary {
+    background-color: #666666 !important;
+    color: #FFFFFF !important;
+}
+
+/* Заголовки */
+body.accessibility-mode h1, 
+body.accessibility-mode h2, 
+body.accessibility-mode h3, 
+body.accessibility-mode h4, 
+body.accessibility-mode h5, 
+body.accessibility-mode h6 {
+    color: #000000 !important;
+    font-weight: bold !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.4 !important;
+    border-bottom: 2px solid #000000 !important;
+    padding-bottom: 0.5rem !important;
+}
+
+body.accessibility-mode h1 { font-size: 28px !important; }
+body.accessibility-mode h2 { font-size: 26px !important; }
+body.accessibility-mode h3 { font-size: 24px !important; }
+body.accessibility-mode h4 { font-size: 22px !important; }
+body.accessibility-mode h5 { font-size: 20px !important; }
+body.accessibility-mode h6 { font-size: 18px !important; }
+
+/* Ссылки */
+body.accessibility-mode a {
+    color: #0000FF !important;
+    text-decoration: underline !important;
+    font-weight: bold !important;
+    border-bottom: 1px solid #0000FF !important;
+}
+
+body.accessibility-mode a:hover,
+body.accessibility-mode a:focus {
+    color: #FF0000 !important;
+    background-color: #FFFF00 !important;
+    text-decoration: none !important;
+    outline: 2px solid #FF0000 !important;
+}
+
+/* Кнопки */
+body.accessibility-mode .btn {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+    border: 3px solid #000000 !important;
+    font-size: 18px !important;
+    padding: 0.5rem 1rem !important;
+    margin-right: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+    font-weight: bold !important;
+}
+
+body.accessibility-mode .btn:hover,
+body.accessibility-mode .btn:focus {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    text-decoration: underline !important;
+    outline: 3px solid #000000 !important;
+}
+
+body.accessibility-mode .btn-primary {
+    background-color: #0000FF !important;
+    border-color: #0000FF !important;
+}
+
+body.accessibility-mode .btn-primary:hover,
+body.accessibility-mode .btn-primary:focus {
+    background-color: #FFFFFF !important;
+    color: #0000FF !important;
+    border-color: #0000FF !important;
+}
+
+body.accessibility-mode .btn-success {
+    background-color: #008000 !important;
+    border-color: #008000 !important;
+}
+
+body.accessibility-mode .btn-success:hover,
+body.accessibility-mode .btn-success:focus {
+    background-color: #FFFFFF !important;
+    color: #008000 !important;
+    border-color: #008000 !important;
+}
+
+body.accessibility-mode .btn-danger {
+    background-color: #FF0000 !important;
+    border-color: #FF0000 !important;
+}
+
+body.accessibility-mode .btn-danger:hover,
+body.accessibility-mode .btn-danger:focus {
+    background-color: #FFFFFF !important;
+    color: #FF0000 !important;
+    border-color: #FF0000 !important;
+}
+
+/* Формы */
+body.accessibility-mode .form-control,
+body.accessibility-mode .form-select {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+    font-size: 18px !important;
+    padding: 0.75rem 1rem !important;
+    height: auto !important;
+}
+
+/* Дропдауны */
+
+body.accessibility-mode .form-control:focus,
+body.accessibility-mode .form-select:focus {
+    border-color: #0000FF !important;
+    outline: 3px solid #0000FF !important;
+    box-shadow: none !important;
+}
+
+body.accessibility-mode .form-label,
+body.accessibility-mode .form-check-label {
+    color: #000000 !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    margin-bottom: 0.5rem !important;
+}
+
+body.accessibility-mode .form-check-input {
+    width: 24px !important;
+    height: 24px !important;
+    margin-right: 0.5rem !important;
+    border: 2px solid #000000 !important;
+}
+
+/* Таблицы */
+body.accessibility-mode table,
+body.accessibility-mode .table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-bottom: 1.5rem !important;
+    border: 2px solid #000000 !important;
+}
+
+body.accessibility-mode th,
+body.accessibility-mode td {
+    border: 2px solid #000000 !important;
+    padding: 1rem !important;
+    font-size: 18px !important;
+}
+
+body.accessibility-mode th {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+    font-weight: bold !important;
+}
+
+body.accessibility-mode .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #F0F0F0 !important;
+}
+
+/* Навигация */
+body.accessibility-mode .navbar,
+body.accessibility-mode .navbar-brand,
+body.accessibility-mode .nav-link {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+body.accessibility-mode .nav-link {
+    font-size: 18px !important;
+    padding: 1rem !important;
+    border: 1px solid #FFFFFF !important;
+    margin-right: 0.5rem !important;
+}
+
+body.accessibility-mode .nav-link:hover,
+body.accessibility-mode .nav-link:focus {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    text-decoration: underline !important;
+}
+
+/* Хлебные крошки */
+body.accessibility-mode .breadcrumb {
+    background-color: #F0F0F0 !important;
+    padding: 1rem !important;
+    margin-bottom: 1.5rem !important;
+    border: 1px solid #000000 !important;
+}
+
+body.accessibility-mode .breadcrumb-item {
+    font-size: 18px !important;
+}
+
+/* Оповещения */
+body.accessibility-mode .alert {
+    border: 3px solid #000000 !important;
+    padding: 1rem !important;
+    margin-bottom: 1.5rem !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+}
+
+body.accessibility-mode .alert-success {
+    background-color: #FFFFFF !important;
+    color: #008000 !important;
+    border-color: #008000 !important;
+}
+
+body.accessibility-mode .alert-danger {
+    background-color: #FFFFFF !important;
+    color: #FF0000 !important;
+    border-color: #FF0000 !important;
+}
+
+body.accessibility-mode .alert-warning {
+    background-color: #FFFFFF !important;
+    color: #FF8C00 !important;
+    border-color: #FF8C00 !important;
+}
+
+body.accessibility-mode .alert-info {
+    background-color: #FFFFFF !important;
+    color: #0000FF !important;
+    border-color: #0000FF !important;
+}
+
+/* Стили для ползунка размера шрифта */
+.accessibility-slider-container {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border: 1px solid #CCCCCC;
+    background-color: #F5F5F5;
+    border-radius: 5px;
+}
+
+@media (max-width: 767px) {
+    .accessibility-slider-container {
+        padding: 12px 15px;
+        margin-bottom: 15px;
+    }
+}
+
+.accessibility-slider-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.accessibility-slider-header i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.font-size-value {
+    font-weight: bold;
+    min-width: 50px;
+    text-align: right;
+}
+
+.accessibility-slider {
+    width: 100%;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #d3d3d3;
+    outline: none;
+    border-radius: 3px;
+}
+
+.accessibility-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #4e73df;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 767px) {
+    .accessibility-slider::-webkit-slider-thumb {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.accessibility-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #4e73df;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 767px) {
+    .accessibility-slider::-moz-range-thumb {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.accessibility-slider:focus {
+    outline: none;
+}
+
+.accessibility-slider:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 3px rgba(78, 115, 223, 0.3);
+}
+
+.accessibility-slider::-moz-range-progress {
+    background-color: #4e73df;
+    height: 6px;
+    border-radius: 3px;
+}
+
+/* Контейнер для элементов доступности */
+.accessibility-container {
+    position: fixed;
+    top: 50%;
+    right: 0; /* Увеличиваем отступ справа */
+    transform: translateY(-50%);
+    z-index: 9999;
+    pointer-events: none;
+    width: auto;
+    overflow: visible !important;
+}
+
+.accessibility-container * {
+    pointer-events: auto;
+}
+
+/* Кнопка-триггер для открытия панели */
+.accessibility-trigger {
+    width: 50px !important; /* Добавляем !important для переопределения стилей */
+    height: 50px !important;
+    background-color: #4e73df !important;
+    border-radius: 10px 0 0 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: white !important;
+    font-size: 24px !important;
+    cursor: pointer !important;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
+    position: fixed !important; /* Используем фиксированное позиционирование */
+    top: 50% !important; /* Располагаем по центру экрана по вертикали */
+    right: 0 !important; /* Располагаем кнопку справа */
+    transform: translateY(-50%) !important; /* Центрируем по вертикали */
+    z-index: 9999 !important; /* Увеличиваем z-index */
+    border: 2px solid white !important; /* Добавляем белую рамку */
+    min-width: 50px !important; /* Добавляем минимальную ширину */
+    max-width: none !important; /* Убираем ограничение по максимальной ширине */
+    overflow: visible !important; /* Гарантируем, что содержимое не будет обрезано */
+    opacity: 1 !important; /* Добавляем начальную непрозрачность */
+    visibility: visible !important; /* Добавляем начальную видимость */
+}
+
+.accessibility-trigger:hover {
+    background-color: #3a5bc7 !important;
+    width: 55px !important;
+    transform: translateY(-50%) translateX(-5px) !important; /* Сохраняем центрирование по вертикали и сдвигаем влево */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2) !important; /* Усиливаем тень при наведении */
+}
+
+/* Скрытие кнопки доступности, когда панель открыта */
+.accessibility-trigger.hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(-50%) translateX(100%) !important; /* Сдвигаем за пределы экрана */
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease !important;
+}
+
+@media (max-width: 767px) {
+    /* Скрываем панель доступности на мобильных устройствах */
+    .accessibility-container,
+    .accessibility-trigger,
+    .accessibility-panel {
+        display: none !important;
+    }
+}
+
+/* Панель настроек доступности */
+.accessibility-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    background-color: #FFFFFF;
+    border: 2px solid #4e73df;
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    padding: 15px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    max-width: 300px;
+    max-height: 90vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* Плавная прокрутка на iOS */
+    z-index: 10000 !important; /* Делаем значение выше, чем у кнопки */
+}
+
+/* Открытие панели - общий случай */
+.accessibility-panel.open {
+    transform: translateX(0);
+}
+
+
+
+@media (max-width: 767px) {
+    .accessibility-panel {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        right: 0;
+        max-width: 100%;
+        width: 100%;
+        height: 80vh;
+        max-height: 80vh;
+        transform: translateY(100%);
+        border-radius: 10px 10px 0 0;
+        border: 2px solid #4e73df;
+        border-bottom: none;
+        padding: 15px;
+        z-index: 9999;
+    }
+    
+    .accessibility-panel.open {
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Заголовок панели с кнопкой закрытия */
+.accessibility-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #4e73df;
+    padding-bottom: 10px;
+    position: sticky;
+    top: 0;
+    background-color: #FFFFFF;
+    z-index: 2;
+}
+
+@media (max-width: 767px) {
+    .accessibility-header {
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+        position: relative;
+        padding-right: 50px; /* Добавляем отступ справа для кнопки */
+    }
+    
+    .accessibility-header h3 {
+        font-size: 20px;
+        margin-left: 5px;
+    }
+}
+
+.accessibility-panel h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #4e73df;
+}
+
+.accessibility-close {
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #4e73df;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+@media (max-width: 767px) {
+    .accessibility-close {
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+        background-color: rgba(78, 115, 223, 0.1);
+        position: absolute;
+        top: 12px;
+        right: 12px;
+    }
+}
+
+.accessibility-close:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.1);
+}
+
+.accessibility-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border: 1px solid #CCCCCC;
+    background-color: #F5F5F5;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+@media (max-width: 767px) {
+    .accessibility-button {
+        padding: 12px 15px;
+        margin-bottom: 15px;
+    }
+}
+
+.accessibility-button:hover {
+    background-color: #EEEEEE;
+}
+
+.accessibility-button i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.accessibility-toggle {
+    width: 40px;
+    height: 20px;
+    background-color: #CCCCCC;
+    border-radius: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.accessibility-toggle::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: all 0.3s ease;
+}
+
+.accessibility-toggle.active {
+    background-color: #4e73df;
+}
+
+.accessibility-toggle.active::after {
+    left: calc(100% - 18px);
+}
+
+/* Стрелка доступности */
+.accessibility-trigger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    width: 36px;
+    height: 60px;
+    background-color: #4e73df;
+    border: 2px solid #4e73df;
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.accessibility-trigger i {
+    color: white;
+    font-size: 18px;
+    transition: transform 0.3s;
+}
+
+/* Скрытие триггера при взаимодействии - только на десктопах */
+@media (hover: hover) {
+    /* Только скрываем кнопку, когда панель открыта */
+    .accessibility-panel.open ~ .accessibility-trigger {
+        opacity: 0;
+        width: 0;
+        overflow: hidden;
+    }
+    
+    /* Удалены правила, которые вызывали открытие панели при наведении */
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .accessibility-panel {
+        max-width: 260px;
+        max-height: 80vh;
+    }
+    
+    .accessibility-trigger {
+        width: 32px;
+        height: 50px;
+    }
+    
+    .accessibility-panel h3 {
+        font-size: 16px;
+    }
+    
+    .accessibility-button, 
+    .accessibility-slider-container {
+        padding: 6px 12px;
+    }
+    
+    /* Специальные стили для мобильных устройств - показываем кнопку закрытия более заметной */
+    .accessibility-close {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+        background-color: #f0f0f0;
+    }
+    
+    /* Триггер скрывается при открытой панели */
+    .accessibility-panel.open ~ .accessibility-trigger {
+        opacity: 0;
+        width: 0;
+        visibility: hidden;
+    }
+}
+
+/* Специальный стиль для устройств без возможности hover */
+@media (hover: none) {
+    .accessibility-panel {
+        transform: translateX(105%);
+    }
+    
+    .accessibility-panel.open {
+        transform: translateX(0);
+    }
+}
+
+/* Инверсия цветов */
+body.color-invert {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+body.color-invert .container,
+body.color-invert .card,
+body.color-invert .card-body,
+body.color-invert .card-header,
+body.color-invert .list-group-item {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+    border-color: #FFFFFF !important;
+}
+
+body.color-invert h1,
+body.color-invert h2,
+body.color-invert h3,
+body.color-invert h4,
+body.color-invert h5,
+body.color-invert h6 {
+    color: #FFFFFF !important;
+    border-color: #FFFFFF !important;
+}
+
+body.color-invert a {
+    color: #FFFF00 !important;
+    border-color: #FFFF00 !important;
+}
+
+body.color-invert a:hover,
+body.color-invert a:focus {
+    color: #FF0000 !important;
+    background-color: #FFFF00 !important;
+}
+
+body.color-invert .form-control,
+body.color-invert .form-select {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+    border-color: #FFFFFF !important;
+}
+
+body.color-invert th {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+}
+
+body.color-invert .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #222222 !important;
+}

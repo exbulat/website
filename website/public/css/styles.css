@@ -1,0 +1,767 @@
+/* Общие стили */
+/* Предотвращение горизонтальной прокрутки */
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+:root {
+    --primary-color: #4e73df;
+    --background-color: #ffffff;
+    --font-family: 'Open Sans', sans-serif;
+    --success-color: #1cc88a;
+    --info-color: #36b9cc;
+    --warning-color: #f6c23e;
+    --danger-color: #e74a3b;
+    --secondary-color: #858796;
+    --light-color: #f8f9fc;
+    --dark-color: #5a5c69;
+}
+
+html, body {
+    overflow-x: hidden; /* Предотвращаем горизонтальную прокрутку */
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+}
+
+/* Добавляем исключение для элементов доступности */
+.accessibility-trigger, .accessibility-panel, .accessibility-container {
+    overflow: visible !important;
+    max-width: none !important;
+}
+
+body {
+    font-family: var(--font-family);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Оптимизация для плавного масштабирования */
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+#app {
+    flex: 1;
+    /* Оптимизация для плавного масштабирования */
+    will-change: transform;
+    contain: layout style paint;
+}
+
+/* Стили для навигации */
+.navbar-brand {
+    font-weight: 600;
+}
+
+/* Стили для карточек */
+.card {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+/* Стили для кнопок */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #2e59d9;
+    border-color: #2653d4;
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+.btn-success:hover {
+    background-color: #17a673;
+    border-color: #169b6b;
+}
+
+/* Стили для кнопки выхода */
+
+/* Стили для результатов опросов и графиков */
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.chart-container.chart-animated {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.result-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2rem;
+    /* Оптимизация для плавного масштабирования */
+    will-change: transform, box-shadow;
+    contain: layout style;
+}
+
+.result-card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.export-btn {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.response-count {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.response-label {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.filter-container {
+    background-color: var(--light-color);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stats-card {
+    border-left: 4px solid;
+    border-radius: 0.25rem;
+}
+
+.stats-card.primary {
+    border-left-color: var(--primary-color);
+}
+
+.stats-card.success {
+    border-left-color: var(--success-color);
+}
+
+.stats-card.info {
+    border-left-color: var(--info-color);
+}
+
+.stats-card.warning {
+    border-left-color: var(--warning-color);
+}
+
+.archive-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+
+/* Стили для фильтрации по категориям */
+.category-filter-buttons {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.category-filter-buttons .btn-group {
+    flex-wrap: nowrap;
+}
+
+/* Анимации */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+    /* Оптимизация для плавного масштабирования */
+    will-change: opacity, transform;
+    contain: layout style;
+}
+
+.animate-on-scroll.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Стили для списка опросов */
+/* Стили для корректного отображения выпадающих меню */
+.card .dropdown-menu.dropdown-menu-end {
+    max-height: none !important;
+    overflow: visible !important;
+    z-index: 9999 !important;
+    transform: none !important;
+    min-width: 180px;
+    border: none;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+.card .dropdown {
+    position: static;
+}
+
+.card .dropdown .dropdown-menu {
+    position: absolute;
+    right: 0;
+    left: auto;
+}
+
+.card .dropdown-item {
+    padding: .5rem 1rem;
+}
+
+/* Стили для истории опросов */
+.filter-buttons {
+    margin-top: 10px;
+}
+
+/* Радикальная оптимизация производительности */
+/* Классы для отключения анимаций при масштабировании */
+.resize-animation-stopper *,
+.scroll-animation-stopper *,
+.zoom-animation-stopper * {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+}
+
+
+
+/* Режим высокой производительности при масштабировании */
+.performance-mode {
+    /* Отключение всех теней */
+    --shadow-sm: none !important;
+    --shadow-md: none !important;
+    --shadow-lg: none !important;
+}
+
+.performance-mode * {
+    /* Отключение всех анимаций и эффектов */
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-radius: 0 !important;
+    background-image: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+/* Оптимизация для устройств с низкой производительностью */
+.low-performance-device {
+    /* Упрощенный режим для медленных устройств */
+    --transition-speed: 0s !important;
+}
+
+.low-performance-device * {
+    transition-duration: 0s !important;
+    animation-duration: 0s !important;
+}
+
+/* Оптимизация для графиков */
+.chart-container canvas {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    contain: strict;
+}
+
+/* Оптимизация для изображений */
+img {
+    image-rendering: optimizeQuality;
+    transform: translateZ(0);
+    contain: size layout;
+}
+
+/* Адаптивные стили */
+@media (max-width: 767.98px) {
+    .filter-buttons .btn-group {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
+    
+    .filter-buttons .btn-group .btn {
+        margin-right: 0;
+        border-radius: 4px !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .filter-buttons .btn-group {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .category-filter-buttons {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .action-buttons {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .share-buttons-responsive {
+        flex: 1;
+    }
+    
+    .share-buttons-responsive .btn {
+        padding: 0.375rem 0.5rem;
+        font-size: 0.875rem;
+    }
+    
+    .share-buttons-responsive .text-muted {
+        display: none;
+    }
+    
+    .export-dropdown {
+        flex: 0 0 auto;
+    }
+    
+    .export-dropdown .btn {
+        padding: 0.375rem 0.75rem;
+    }
+    
+    .export-text {
+        display: none;
+    }
+    
+    .btn-group .dropdown-menu {
+        min-width: 200px;
+    }
+}
+
+@media (min-width: 768px) {
+    .export-text {
+        display: inline;
+    }
+}
+.menu-button {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0.75rem 0;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    text-align: left;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s ease;
+}
+
+.fullscreen-menu-container.active .menu-button {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-button:hover {
+    color: var(--primary-color);
+}
+
+.menu-button::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.menu-button:hover::after {
+    width: 100%;
+}
+
+/* Стили для полноэкранного меню */
+.fullscreen-menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* Для плавной прокрутки на iOS */
+    padding: 2rem 0;
+}
+
+.fullscreen-menu-container.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fullscreen-menu {
+    max-width: 90%;
+    width: 100%;
+    padding: 1rem 0;
+    overflow-y: auto; /* Добавляем возможность прокрутки */
+    -webkit-overflow-scrolling: touch; /* Для плавной прокрутки на iOS */
+    max-height: 80vh; /* Ограничиваем высоту меню, чтобы оно могло прокручиваться */
+}
+
+/* Стили для мобильных устройств */
+@media (max-width: 767px) {
+    .fullscreen-menu {
+        margin-top: 7rem;
+        margin-bottom: 7rem;
+        height: auto;
+    }
+
+    .fullscreen-menu-container {
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch; /* Для плавной прокрутки на iOS */
+        padding-bottom: 50px; /* Добавляем паддинг внизу для лучшей прокрутки */
+    }
+    
+    /* Улучшаем стили для навигации в меню на мобильных устройствах */
+    .fullscreen-menu-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Стили для десктопных версий */
+@media (min-width: 768px) {
+    .fullscreen-menu {
+        margin-top: 15rem;
+    }
+}
+
+.fullscreen-menu-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: auto;
+    max-height: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    overflow-x: hidden; /* Предотвращаем горизонтальную прокрутку */
+}
+
+.menu-column {
+    flex: 0 0 300px;
+    margin: 0 20px 20px;
+    min-width: 250px;
+}
+
+@media (max-width: 767px) {
+    .menu-column {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin: 0 10px 30px;
+    }
+    
+    .fullscreen-menu {
+        max-width: 95%;
+        padding: 0;
+    }
+    
+    .fullscreen-menu-container {
+        align-items: flex-start;
+        padding-top: 60px;
+    }
+}
+
+.menu-column h4 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.menu-column h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.fullscreen-menu-nav a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0.75rem 0;
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    position: relative;
+    display: block;
+    text-align: left;
+}
+
+.fullscreen-menu-container.active .fullscreen-menu-nav a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fullscreen-menu-nav a:hover {
+    color: var(--primary-color);
+}
+
+.fullscreen-menu-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.fullscreen-menu-nav a:hover::after {
+    width: 100%;
+}
+
+.menu-close-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 767px) {
+    .menu-close-btn {
+        top: 15px;
+        right: 15px;
+        width: 44px;
+        height: 44px;
+        font-size: 1.8rem;
+        background: var(--primary-color);
+    }
+}
+
+.menu-close-btn:hover {
+    color: var(--primary-color);
+    transform: rotate(90deg);
+}
+
+.menu-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle-btn:hover {
+    transform: scale(1.1);
+}
+
+.menu-toggle-btn .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Стили для шапки */
+.navbar-brand-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    position: relative;
+}
+
+.auth-buttons {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.auth-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.login-btn {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.login-btn:hover {
+    background-color: white;
+    color: #333;
+}
+
+.register-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: 2px solid var(--primary-color);
+}
+
+.register-btn:hover {
+    background-color: #2e59d9;
+    border-color: #2e59d9;
+}
+
+/* Стили для пользовательской информации */
+.user-info {
+    color: white;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.user-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 1rem;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: #e74a3b;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    padding: 0.15rem 0.4rem;
+}
+
+/* Стили для быстрых ссылок */
+.quick-nav {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.quick-nav-link {
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 6px 12px;
+    margin: 0 5px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.quick-nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #000;
+}
+
+/* Стили для иконок в шапке */
+.header-icon {
+    color: #333;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.header-icon:hover {
+    color: var(--primary-color);
+}
+
+.header-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.header-avatar:hover {
+    background-color: #e0e0e0;
+    color: var(--primary-color);
+} 

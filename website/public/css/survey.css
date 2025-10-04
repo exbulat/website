@@ -1,0 +1,135 @@
+/* Стили для контейнера опроса */
+.survey-container {
+    background-color: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    margin: 2rem auto;
+    max-width: 800px;
+    width: 100%;
+}
+
+.survey-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Стили для вопросов */
+.question {
+    display: none;
+}
+
+.question.active {
+    display: block;
+}
+
+.question-number {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.required-mark {
+    color: #dc3545;
+}
+
+/* Стили для таймера */
+.timer-container {
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+/* Стили для шкалы */
+.scale-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 1rem 0;
+}
+
+.scale-item {
+    flex: 1;
+    min-width: 40px;
+    text-align: center;
+}
+
+.scale-item input[type="radio"] {
+    display: none;
+}
+
+.scale-item label {
+    display: block;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.scale-item input[type="radio"]:checked + label {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.scale-item label:hover {
+    background-color: #e9ecef;
+}
+
+.scale-item input[type="radio"]:checked + label:hover {
+    background-color: var(--primary-color);
+}
+
+/* Стили для кнопок шаринга */
+.share-container {
+    margin-top: 1rem;
+}
+
+.share-buttons-light {
+    display: flex;
+    gap: 10px;
+}
+
+.share-buttons-light .share-button {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.share-buttons-light .share-button:hover {
+    background-color: #e9ecef;
+}
+
+/* Стили для ответов пользователя */
+.user-answer {
+    background-color: #e9f7f9;
+    border-left: 3px solid var(--primary-color);
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.selected-option {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Стили для мигающего таймера */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.blink {
+    animation: blink 1s infinite;
+}
+
+.timer-container.text-danger {
+    font-weight: bold;
+}
